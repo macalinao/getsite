@@ -1,5 +1,6 @@
 rimraf = require 'rimraf'
 getsite = require '../'
+fs = require 'fs'
 
 describe 'getsite', ->
   afterEach (done) ->
@@ -10,5 +11,6 @@ describe 'getsite', ->
     getsite 'http://expressjs.com/',
       dest: './sandbox/'
     , (err) ->
-      console.log JSON.stringify err
-      done()
+      fs.readdir './sandbox/', (err, files) ->
+        files.should.include 'expressjs.com'
+        done()

@@ -6,11 +6,15 @@ module.exports = (page, opts = {}, cb) ->
   getsite
 
   Gets the given website recursively.
+
+  @param page The page to download.
+  @param opts The options. Read the docs!
+  @param cb The callback(err, stdout, stderr).
   ###
   parse = url.parse page
 
   unless opts.dest?
-    opts.dest = parse.hostname
+    opts.dest = './'
 
   exec "wget --recursive --no-clobber 
     --page-requisites --html-extension 
@@ -18,6 +22,4 @@ module.exports = (page, opts = {}, cb) ->
     --domains #{parse.host} --no-parent 
     #{parse.host + parse.pathname} -P #{opts.dest}", 
   (err, stdout, stderr) ->
-    
-    console.log 'Hello'
-    cb err
+    cb err, stdout, stderr
