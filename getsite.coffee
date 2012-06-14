@@ -16,7 +16,7 @@ module.exports = (page, opts = {}, cb) ->
   unless opts.dest?
     opts.dest = './'
 
-  exec "wget --recursive --no-clobber 
+  exec "wget --recursive 
     --page-requisites --html-extension 
     --convert-links --restrict-file-names=windows 
     --domains #{parse.host} --no-parent 

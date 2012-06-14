@@ -1,0 +1,27 @@
+#!/usr/bin/env node
+
+var path = require('path')
+var fs = require('fs')
+var argv = require('optimist')
+    .usage('Usage: $0 --url [url]')
+    
+    .demand(['url'])
+    .alias('u', 'url')
+    .describe('url', 'The URL of one of the pages you want to copy.')
+
+    .alias('d', 'dest')
+    .describe('dest', 'The destination directory of where you want to copy to.')
+
+    .argv
+
+var src = path.join(path.dirname(fs.realpathSync(__filename)), 
+    '..', 'index')
+var getsite = require(src) 
+getsite(argv.url, {dest: argv.dest}, function(err, stdout, stderr) {
+    if (err) {
+        console.error(stderr)
+        return
+    }
+
+    console.log('The website was downloaded sucessfully.')
+})

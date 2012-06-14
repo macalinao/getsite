@@ -1,19 +1,29 @@
 {
-    "name": "getsite", 
-    "version": "1.0.0", 
-    "description": "An app made with Mocha and Coffeescript.", 
-    "author": "Your Name", 
-    "main": "index", 
-    "engines": { "node": ">= 0.4.x < 0.8.0" }, 
-    "scripts": {
-      "test": "make test"
-    }, 
-    "dependencies":{
-      "coffee-script": "*"
-    }, 
-    "devDependencies": {
-      "mocha": "*",   
-      "should": "*",
-      "rimraf": "*"
-    }
+  "name": "getsite", 
+  "version": "1.0.0", 
+  "description": "An app made with Mocha and Coffeescript.", 
+  "author": "Your Name", 
+  "main": "index", 
+  "engines": { "node": ">= 0.4.x < 0.8.0" }, 
+  "scripts": {
+    "test": "make test"
+  },
+  "keywords": [
+    "getsite",
+    "wget",
+    "download",
+    "copy"
+  ],
+  "dependencies":{
+    "coffee-script": "*",
+    "optimist": "*"
+  }, 
+  "devDependencies": {
+    "mocha": "*",   
+    "should": "*",
+    "rimraf": "*"
+  },
+  "bin": {
+    "getsite": "./bin/getsite"
+  }
 }
