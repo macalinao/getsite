@@ -1,8 +1,8 @@
 {
   "name": "getsite", 
   "version": "1.0.0", 
-  "description": "An app made with Mocha and Coffeescript.", 
-  "author": "Your Name", 
+  "description": "Gets a website recursively via wget.", 
+  "author": "Ian Macalinao <ianmacalinao@gmail.com>", 
   "main": "index", 
   "engines": { "node": ">= 0.4.x < 0.8.0" }, 
   "scripts": {
